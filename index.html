@@ -1,20 +1,29 @@
 <!DOCTYPE html>
 <html>
-<head>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-<script>
-$(document).ready(function(){
-  $("p").click(function(){
-    $(this).hide();
-  });
-});
-</script>
-</head>
-<body>
+  <head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="index.js"></script>
+    <link rel="stylesheet" href="index.css" />
+  </head>
+  <body>
+    <section class="section">
+      <div class="container">
+        <h1>
+          Please give your feedback below
+        </h1>
+        <p>
+          Click New Line if you need more space. Click X to remove a line.
+        </p>
+        <p>
+          Your review may not be more than 1000 characters.
+        </p>
 
-<p>If you click on me, I will disappear.</p>
-<p>Click me away!</p>
-<p>Click me too!</p>
+        <ul class="reviews"></ul>
 
-</body>
+        <button class="new-line-button">New Line</button>
+
+        <textarea></textarea>
+      </div>
+    </section>
+  </body>
 </html>

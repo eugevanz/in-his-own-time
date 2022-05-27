@@ -4,10 +4,22 @@ body {
 
 h1 {
   color: white;
-  text-align: center;
 }
 
 p {
   font-family: verdana;
-  font-size: 20px;
+}
+
+.reviews {
+  list-style-type: lower-alpha;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  margin: 2vw;
+}
+
+.new-line-button {
+  align-self: flex-start;
 }
