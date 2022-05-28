@@ -28,6 +28,11 @@ textarea {
   flex-wrap: nowrap;
   align-items: center;
 }
+.new-line-insert {
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+}
 .new-line-button {
   align-self: flex-start;
 }
@@ -39,7 +44,24 @@ textarea {
   margin-right: 2vw;
   width: 100%;
 }
+.insert-line-text {
+  background-color: whitesmoke;
+  width: 100%;
+  height: 20px;
+  margin-right: 2vw;
+  width: 100%;
+}
+.new-line-done {
+  background-color: whitesmoke;
+  width: 100%;
+  height: 20px;
+  margin-right: 2vw;
+  width: 100%;
+}
 
 .new-line-number {
+  min-width: 10vw;
+}
+.insert-line-number {
   min-width: 10vw;
 }

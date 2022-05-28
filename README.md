@@ -1,6 +1,6 @@
 # in-his-own-time
 
-...with a deadline of Wednesday 01 June 2022 at 9am. Please submit the test on a shared web location (such as GoogleDrive, OneDrive, DropBox, etc), since our mail server may reject code (or encrypted files) as potential malware. 
+with a deadline of Wednesday 01 June 2022 at 9am. Please submit the test on a shared web location (such as GoogleDrive, OneDrive, DropBox, etc), since our mail server may reject code (or encrypted files) as potential malware. 
 
 Tests should be sent via Dropbox/FileGooi e.t.c publicly shared.
 Please do not send files.

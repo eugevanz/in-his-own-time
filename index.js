@@ -1,40 +1,41 @@
 $(function () {
-  let reviews = $('.reviews');
-  let message = '';
+  let lineCount = 1;
+  $('.insert-line-number').text(`Line ${$('.reviews').length}`);
 
-  function newLine() {
+  function doneLine(currentMessage) {
     return $(
       `<li class="new-line">
       <div class="new-line-number">Line ${$('.new-line').length + 1}</div>
-      <input type="text" class="new-line-text"></input>
+      <input type="text" class="new-line-text" value="${currentMessage}" disabled></input>
       <button>X</button>
     </li>`
     );
   }
 
-  reviews.append(newLine);
-
   $('.new-line-button').click(function () {
-    reviews.append(newLine);
+    lineCount++;
+
+    $('textarea').val($('textarea').val() + $('.insert-line-text').val());
+
+    doneLine($('.insert-line-text').val()).insertBefore($('.new-line-insert'));
+
+    $('.insert-line-text').val('');
+    $('.insert-line-number').text(`Line ${lineCount}`);
+    $('.insert-line-text').focus();
   });
 
-  $('.new-line-text')
-    .last()
-    .keyup(function (e) {
-      message = $(this).val();
-      console.log(message);
-      // if (e.keyCode !== 8) {
-      //   message = message + String.fromCharCode(e.keyCode);
-      // } else {
-      //   message = message.slice(0, -1);
-      // }
+  $('.insert-line-text').keyup(function () {
+    if ($('textarea').val().length > 1000) $(this).prop('disabled', true);
 
-      if (message.length > 0 && message.length % 50 === 0) {
-        $(this).prop('disabled', true);
-        reviews.append(newLine);
-        $('textarea').val(message);
-        $('.new-line-text').last().focus();
-        return;
-      }
-    });
+    if ($(this).val().length > 50) {
+      lineCount++;
+
+      doneLine($(this).val()).insertBefore($('.new-line-insert'));
+
+      $('textarea').val($('textarea').val() + $(this).val());
+      $(this).val('');
+
+      $('.insert-line-number').text(`Line ${lineCount}`);
+    }
+  });
 });
