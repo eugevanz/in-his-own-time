@@ -77,13 +77,6 @@ $(document).ready(function () {
       $('.count').text(1000 - $('textarea').val().length);
     }
   });
-
-  if (window.matchMedia('(max-width: 768px)').matches) {
-    $('.new-line-insert').css({
-      'flex-direction': 'column',
-      'align-items': 'stretch'
-    });
-  }
 });
 
 $(window).resize(function () {
