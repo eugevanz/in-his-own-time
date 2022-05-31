@@ -59,19 +59,40 @@ $(document).ready(function () {
       alert($(this).innerWidth());
     }
 
-    if ($('textarea').val().length > 1000) $(this).prop('disabled', true);
+    if ($('textarea').val().length > 999) {
+      $(this).prop('disabled', true);
+      $('textarea').val($('textarea').val().substring(0, 999));
+    }
 
-    if ($(this).val().length > 50) {
+    if ($(this).val().length > 49) {
       lineCount++;
 
-      doneLine($(this).val()).insertBefore($('.new-line-insert'));
+      doneLine($(this).val().substring(0, 49)).insertBefore(
+        $('.new-line-insert')
+      );
 
-      $('textarea').val($('textarea').val() + $(this).val());
+      $('textarea').val($('textarea').val() + `${$(this).val()}\n`);
       $(this).val('');
 
-      $('.insert-line-number').text(`Line ${lineCount}`);
+      $('.count').text(1000 - $('textarea').val().length);
     }
   });
+
+  if (window.matchMedia('(max-width: 768px)').matches) {
+    $('.new-line-insert').css({
+      'flex-direction': 'column',
+      'align-items': 'stretch'
+    });
+  }
+});
+
+$(window).resize(function () {
+  if (window.matchMedia('(max-width: 768px)').matches) {
+    $('.new-line').css({
+      'flex-direction': 'column',
+      'align-items': 'stretch'
+    });
+  }
 });
 
 $(document).on('click', '.new-line-delete', function () {
