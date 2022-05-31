@@ -92,6 +92,19 @@ $(window).resize(function () {
       'flex-direction': 'column',
       'align-items': 'stretch'
     });
+    $('.new-line-insert').css({
+      'flex-direction': 'column',
+      'align-items': 'stretch'
+    });
+  } else {
+    $('.new-line').css({
+      'flex-direction': 'row',
+      'align-items': 'normal'
+    });
+    $('.new-line-insert').css({
+      'flex-direction': 'row',
+      'align-items': 'normal'
+    });
   }
 });
 
